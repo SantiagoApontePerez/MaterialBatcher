@@ -46,7 +46,7 @@ namespace MaterialsBatcher
             	mat.SetTexture("_MainTex", tex);
 
             	var matPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(texPath), mat.name + ".mat");
-            	AssetDatabase.CreateAsset(mat, AssetDatabase.GenerateUniqueAssetPath(matPath))
+            	AssetDatabase.CreateAsset(mat, AssetDatabase.GenerateUniqueAssetPath(matPath));
         	}
 
         	AssetDatabase.SaveAssets();
