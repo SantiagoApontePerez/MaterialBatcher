@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-namespace DefaultNamespace;
+namespace MaterialBatcher;
 
 public class CreateMaterialsFromTextures : EditorWindow
 {

@@ -1,0 +1,12 @@
+{
+  "name": "MaterialBatcher",
+  "rootNamespace": "MaterialBatcher",
+  "autoReferenced": true,
+  "references": [
+    "UnityEditor",
+    "UnityEngine.CoreModule"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}
