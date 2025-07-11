@@ -2,7 +2,7 @@
   "name": "com.santiagoaponteperez.materialbatcher",
   "displayName": "Material Batcher",
   "description": "Batch-generate Materials from Texture2D assets via an Editor window.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "category": "editor extensions",
   "keywords": ["texture", "material", "batch", "editor"],
   "author": { 
