@@ -1,5 +1,7 @@
 # Material Batcher
 
+<img width="620" height="175" alt="image" src="https://github.com/user-attachments/assets/8e3f7419-cdad-44fc-be99-eb28e12942ac" />
+
 A simple Unity Editor tool to batch-generate `Material` assets from `Texture2D` files.
 
 ## Installation
