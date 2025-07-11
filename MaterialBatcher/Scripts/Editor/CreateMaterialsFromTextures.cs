@@ -2,7 +2,6 @@
 using UnityEditor;
 using UnityEngine;
 
-#if UNITY_ENGINE
 namespace MaterialBatcher
 {
 	public class CreateMaterialsFromTextures : EditorWindow
@@ -133,4 +132,3 @@ namespace MaterialBatcher
     	}
 	}
 }
-#endif
