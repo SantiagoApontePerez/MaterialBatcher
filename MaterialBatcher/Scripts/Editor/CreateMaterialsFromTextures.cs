@@ -22,7 +22,7 @@ namespace MaterialsBatcher
     	private void OnGUI()
 	    {
 		    EditorGUILayout.LabelField("Source Textures:", EditorStyles.boldLabel);
-		    sourceFolder = (DefaultAsset)EditorGUILayout.ObjectField("Texture Folder", sourceFolder, typeof(DefaultAsset), false);
+		    textureFolder = (DefaultAsset)EditorGUILayout.ObjectField("Texture Folder", textureFolder, typeof(DefaultAsset), false);
 
 		    EditorGUILayout.Space();
 
@@ -78,7 +78,7 @@ namespace MaterialsBatcher
 			    AssetDatabase.CreateFolder(Path.GetDirectoryName(targetFolderPath), Path.GetFileName(targetFolderPath));
 
 		    // Get all textures in source folder
-		    var sourcePath = AssetDatabase.GetAssetPath(sourceFolder);
+		    var sourcePath = AssetDatabase.GetAssetPath(textureFolder);
 		    var guids = AssetDatabase.FindAssets("t:Texture2D", new[] { sourcePath });
 
 		    foreach (var guid in guids)
