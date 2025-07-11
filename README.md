@@ -1,5 +1,7 @@
 # Material Batcher
 
+<img width="620" height="175" alt="image" src="https://github.com/user-attachments/assets/8e3f7419-cdad-44fc-be99-eb28e12942ac" />
+
 A simple Unity Editor tool to batch-generate `Material` assets from `Texture2D` files.
 
 ## Installation
@@ -23,4 +25,4 @@ Simply download the library into your Unity project and access the utilities acr
 4. Click **Generate Materials**.
 
 ## Versioning
-- **0.0.1**: Alpha Release.
+- **0.1.0**: Beta Release.
