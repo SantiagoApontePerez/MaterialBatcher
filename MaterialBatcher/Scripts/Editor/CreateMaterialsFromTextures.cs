@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace MaterialBatcher.MaterialBatcher.MaterialBatcher.Scripts.Editor
+namespace MaterialBatcher.Scripts.Editor
 {
 	public class CreateMaterialsFromTextures : EditorWindow
 	{
