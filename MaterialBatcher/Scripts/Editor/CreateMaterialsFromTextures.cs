@@ -59,6 +59,13 @@ namespace MaterialBatcher
 
 		    EditorGUILayout.Space();
 
+			EditorGUILayout.Space();
+            EditorGUILayout.HelpBox(
+                "1. Choose the texture folder you wish to batch into materials.\n" +
+                "2. Optionally add a prefix for the generated material.\n" +
+                "3. Pick a target directory to store the generated materials.\n" +
+                "4. Click the button below to batch to material.", MessageType.Info);
+
 		    if (GUILayout.Button("Batch to Material"))
 		    {
 			    if (_textureFolder == null)
