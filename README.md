@@ -21,7 +21,7 @@ A simple Unity Editor tool to batch-generate `Material` assets from `Texture2D` 
 
 ### **Local Install**
 
-Simply download the library into your Unity project 'Assets/' folder.
+Simply download the library into your Unity project `Assets/` folder.
 
 ## Usage
 
