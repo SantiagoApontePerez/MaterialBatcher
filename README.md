@@ -12,8 +12,7 @@ A simple Unity Editor tool to batch-generate `Material` assets from `Texture2D` 
    - Enter: `https://github.com/SantiagoApontePerez/MaterialBatcher.git`
 
 2. **Local Install**
-
-   - Copy the `com.yourcompany.material-batcher` folder into your project’s `Packages/` directory.
+Simply download the library into your Unity project and access the utilities across your scripts or import it in Unity with package manager using this URL:
 
 ## Usage
 
