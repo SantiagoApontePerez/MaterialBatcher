@@ -20,7 +20,7 @@ namespace MaterialsBatcher
         	folder =(DefaultAsset)EditorGUILayout.ObjectField("Folder", folder, typeof(DefaultAsset), false);
         	shader = (Shader)EditorGUILayout.ObjectField("Shader", shader, typeof(Shader), false);
 
-        	if (EditorGUILayout.Button("Generate Materials")) Generate();
+        	if (GUILayout.Button("Generate Materials")) Generate();
     	}
 
     	private void Generate()
