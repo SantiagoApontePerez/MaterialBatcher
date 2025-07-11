@@ -22,7 +22,7 @@ Simply download the library into your Unity project and access the utilities acr
 1. Open Unity and let the package import.
 2. Go to **Tools > Material Batcher**.
 3. Select the folder containing textures and choose a shader.
-4. Click **Generate Materials**.
+4. Click **Batch To Material**.
 
 ## Versioning
 - **0.1.0**: Beta Release.
