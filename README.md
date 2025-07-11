@@ -23,4 +23,4 @@ Simply download the library into your Unity project and access the utilities acr
 4. Click **Generate Materials**.
 
 ## Versioning
-- **0.0.1**: Alpha Release.
+- **0.1.0**: Beta Release.
