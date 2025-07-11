@@ -14,7 +14,6 @@ A simple Unity Editor tool to batch-generate `Material` assets from `Texture2D` 
 
 ### **Via Git URL**
 
-   - Host this package on a Git repository (e.g., GitHub).
    - In Unity, open **Window > Package Manager**.
    - Click the **+** icon and choose **Add package from Git URL...**.
    - Enter: `https://github.com/SantiagoApontePerez/MaterialBatcher.git`
