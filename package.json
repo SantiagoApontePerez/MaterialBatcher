@@ -1,0 +1,14 @@
+{
+  "name": "com.santiagoaponteperez.material-batcher",
+  "displayName": "Material Batcher",
+  "description": "Batch-generate Materials from Texture2D assets via an Editor window.",
+  "version": "0.0.1",
+  "category": "editor extensions",
+  "keywords": ["texture", "material", "batch", "editor"],
+  "author": { 
+	"name": "Santiago Aponte Perez", 
+	"email": "https://github.com/SantiagoApontePerez" 
+	},
+  "documentationUrl": "https://github.com/SantiagoApontePerez/MaterialBatcher/README.md",
+  "dependencies": {}
+}
