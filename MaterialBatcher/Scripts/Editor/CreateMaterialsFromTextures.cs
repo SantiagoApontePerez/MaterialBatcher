@@ -9,6 +9,7 @@ namespace MaterialBatcher
 		#region Private Fields
 
 		private DefaultAsset _textureFolder;
+		private string _prefix = "";
 		private string _targetFolderPath = "Assets/";
 		private Shader _shader;
 
@@ -22,8 +23,11 @@ namespace MaterialBatcher
 
     	private void OnGUI()
 	    {
-		    EditorGUILayout.LabelField("Source Textures:", EditorStyles.boldLabel);
+		    EditorGUILayout.LabelField("Texture Folder To Batch:", EditorStyles.boldLabel);
 		    _textureFolder = (DefaultAsset)EditorGUILayout.ObjectField("Texture Folder", _textureFolder, typeof(DefaultAsset), false);
+		    
+		    EditorGUILayout.LabelField("Starting Prefix:", EditorStyles.boldLabel);
+		    _prefix = EditorGUILayout.TextField(_prefix);
 
 		    EditorGUILayout.Space();
 
@@ -72,30 +76,55 @@ namespace MaterialBatcher
 		    }
 	    }
 
-    	private void Generate()
-    	{
-		    // Ensure output folder exists
-		    if (!AssetDatabase.IsValidFolder(_targetFolderPath))
-			    AssetDatabase.CreateFolder(Path.GetDirectoryName(_targetFolderPath), Path.GetFileName(_targetFolderPath));
+	    #region Helper methods
+	    
+	    private void CreateFolder(string path)
+	    {
+		    AssetDatabase.CreateFolder(Path.GetDirectoryName(_targetFolderPath), Path.GetFileName(_targetFolderPath));
+	    }
 
-		    // Get all textures in source folder
-		    var sourcePath = AssetDatabase.GetAssetPath(_textureFolder);
-		    var guids = AssetDatabase.FindAssets("t:Texture2D", new[] { sourcePath });
+	    private Material CreateMaterial(Texture2D tex)
+	    {
+		    return new Material(_shader ?? Shader.Find("Standard"))
+		    {
+			    mainTexture = tex
+		    };
+	    }
 
+	    private static Texture2D GetTexture(string texPath)
+	    {
+		    return AssetDatabase.LoadAssetAtPath<Texture2D>(texPath);
+	    }
+
+	    private string SavePath(string texPath)
+	    {
+		    var matName = _prefix + Path.GetFileNameWithoutExtension(texPath) + ".mat";
+		    return Path.Combine(_targetFolderPath, matName);
+	    }
+
+	    private string[] FindTextureGuids(string sourcePath)
+	    {
+		    return AssetDatabase.FindAssets("t:Texture2D", new[] { sourcePath });
+	    }
+
+	    private void CreateAssets(string[] guids)
+	    {
 		    foreach (var guid in guids)
 		    {
 			    var texPath = AssetDatabase.GUIDToAssetPath(guid);
-			    var tex = AssetDatabase.LoadAssetAtPath<Texture2D>(texPath);
-
-			    // Create material
-			    var mat = new Material(_shader ?? Shader.Find("Standard"));
-			    mat.mainTexture = tex;
-
-			    // Save material asset
-			    var matName = Path.GetFileNameWithoutExtension(texPath) + ".mat";
-			    var savePath = Path.Combine(_targetFolderPath, matName);
-			    AssetDatabase.CreateAsset(mat, savePath);
+			    AssetDatabase.CreateAsset(CreateMaterial(GetTexture(texPath)), SavePath(texPath));
 		    }
+	    }
+	    
+	    #endregion
+
+    	private void Generate()
+    	{
+		    // Ensure output folder exists
+		    if (!AssetDatabase.IsValidFolder(_targetFolderPath)) CreateFolder(_targetFolderPath);
+
+		    // Get all textures in source folder and create materials from each.
+		    CreateAssets(FindTextureGuids(AssetDatabase.GetAssetPath(_textureFolder)));
 
 		    AssetDatabase.SaveAssets();
 		    AssetDatabase.Refresh();
