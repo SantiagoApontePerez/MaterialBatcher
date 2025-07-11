@@ -23,4 +23,4 @@ A simple Unity Editor tool to batch-generate `Material` assets from `Texture2D` 
 4. Click **Generate Materials**.
 
 ## Versioning
-- **1.0.0**: Initial release.
+- **0.0.1**: Alpha Release.
